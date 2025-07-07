@@ -114,19 +114,4 @@ public class CoachinMasterServiceImpl implements CoachinMasterService {
         gameRepository.save(game);
         return gameDto;
     }
-
-    @Override
-    public GameDto updateGameDescription(GameDto gameDto, String id) {
-        Optional<Game> game = gameRepository.findById(id);
-        if (gameDto.getTitle().isEmpty()) {
-            gameDto.setErrorMessage("Title is empty");
-            return gameDto;
-        }
-        if (game.isPresent()) {
-            Game gameEntity = game.get();
-            gameEntity.setTitle(gameDto.getTitle());
-            gameEntity.setDescription(gameDto.getDescription());
-            gameRepository.save(gameEntity);
-        }
-    }
 }

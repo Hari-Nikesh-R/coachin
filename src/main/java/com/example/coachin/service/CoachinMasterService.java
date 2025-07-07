@@ -11,5 +11,4 @@ public interface CoachinMasterService {
     List<PlayerDto> getPlayerDetails(String name);
     String deletePlayer(String name);
     GameDto addGame(GameDto game);
-    GameDto updateGameDescription(GameDto gameDto, String id);
 }
